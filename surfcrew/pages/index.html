@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surfcrew School</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> -->
+    <link href="css/style.css" rel="stylesheet"> <!-- Link para o ficheiro CSS externo -->
+</head>
+<body>
+    <div class="container">      <!-- Contêiner geral da página -->
+    <header>                      <!-- Cabeçalho fixo no topo -->
+        <span><img src="img/logo.png" class="logo" alt="Logo da Escola de surf"></span> <!-- Espaço reservado para o logotipo -->
+        <label for="menuToggle">☰ Menu</label> <!-- Ícone do menu (hambúrguer) visível no mobile -->
+        <input type="checkbox" id="menuToggle"> 
+        <!-- Checkbox invisível que controla a abertura/fecho do menu lateral -->
+        <nav><!-- Menu lateral deslizante -->
+            <label for="menuToggle" class="close">✖</label> <!-- Botão de fechar o menu -->
+            <a href="#"><b>Sobre Nós</b></a> <!-- Link do menu -->
+            <a href="#"><b>Aulas</b></a>
+            <a href="#"><b>Contactos</b></a>
+            <a href="#"><b>Horários</b></a>
+            <a href="#"><b>Preços</b></a>
+            <a href="#"><b>Inscrever</b></a>
+            <a href="#"><img src="img/perfil.png" alt="Perfil"></a>
+        </nav>
+        <div class="overlay" onclick="document.getElementById('menuToggle').checked=false"></div> 
+        <!-- Camada escura que aparece atrás do menu quando ele está aberto -->
+    </header>
+    <main> <!-- Área principal da página -->
+        <div class="maincontent"> <!-- Conteúdo principal -->
+            <h3>SURFCREW SCHOOL.</h3><br>
+            <p>A Praia da Barra foi o maior centro conserveiro nacional, terra moldada pela tradição do mar, do peixe e dos pescadores. Dessa herança nasce a nossa Surf Crew uma homenagem sincera à história, à cultura local e à ligação profunda da comunidade ao oceano.</p>
+            <button>Horários</button>
+            <button>Preços</button>
+        </div>
+        <div></div>
+        <!-- <aside class="sidebar">Sidebar</aside>  -->
+        <!-- Barra lateral fixa ou responsiva, dependendo do CSS -->
+    </main>
+    <footer>
+        <h4><b>Contactos</b></h4><br>
+        <p><b>SurfCrew@gmail.com</b></p><br>
+        <p><b>+351 912 345 678</b></p><br>
+        <p><b>Praia da Barra, Portugal</b></p><br>
+        
+        <p><b>© 2024 Surfcrew School. Todos os direitos reservados.</b></p>
+    </footer> <!-- Rodapé da página -->
+    </div>
+</body>
+</html>

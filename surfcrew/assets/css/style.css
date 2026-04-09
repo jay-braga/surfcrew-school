@@ -1,0 +1,398 @@
+/*VARIÁVEIS GLOGAIS*/
+:root{
+  --azul-oceano: #0077B6;
+  --azul-claro: #90DBF4;
+  --areia: #f3e6d3;
+  --branco: #ffffff;
+  --areia-clara: #F4E1C1;
+}
+
+/*RESET GERAL: remove margens e paddings padrão*/
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*NAVBAR*/
+.bg-areia {
+  background-color: var(--areia);
+}
+.navbar .nav-link {
+  color: var(--azul-oceano);
+}
+.navbar .nav-link:hover {
+  color: var(--azul-claro);
+}
+.perfil:hover{
+  background-image: url("../img/hoverperfil.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/*BOTÕES*/
+.btn-azul-outline {
+  color: var(--azul-oceano);
+  border: 1px solid var(--azul-claro);
+}
+.btn-azul-outline:hover {
+  background-color: var(--azul-claro);  /* Branco para hover */
+  color: var(--branco);
+}
+.btn-light{
+  color: var(--azul-oceano); 
+  font-size: 20px;
+}
+.btn-light:hover {
+  background-color: var(--azul-claro);  
+}
+
+/*BLOCOS*/
+.bloco1,
+.bloco2,
+.main2,
+.horario,
+.preco {
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: darken;
+}
+
+.bloco1 {
+  background-image: url("../img/1foto.jpg");
+  min-height: 350px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.bloco2 {
+  background-image: url("../img/main1.jpg");
+  min-height: 350px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.main2{
+  background-image: url("../img/main2.jpg");
+  min-height: 505px;
+  width: 100%;                              
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/*REVIEW IMAGEM*/
+.review-img{
+  width:100%;
+  height:300px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/*PATROCÍNIO*/
+.patro{
+  background-image: url("../img/patriocinio.png");
+  background-size: cover;
+  background-position: center;
+  min-height: 100px;
+  min-width: 100px;
+}
+
+/*FOOTER*/
+footer {
+  background-color: var(--azul-oceano);
+  color: var(--branco);
+  font-size: 16px;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;  
+}
+
+.footer-content {
+  background-color: var(--azul-oceano);
+  padding: 0;
+  margin: 0;
+}
+
+.onda-wrapper {
+  line-height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.onda-img {
+  display: block;
+  width: 100%;
+  height: 250px;
+  margin: 0;
+  padding: 0;
+}
+.footer-inner {
+  padding-top: 0;
+}
+
+/* LOGIN / INSCRIÇÃO*/
+.login,
+.inscrever{
+  background-color: var(--azul-oceano);
+  border-radius: 12px;
+  height: auto;
+  width: 100%; 
+  max-width: 1000px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+.login h1{
+  padding: 10px;
+}
+.login form{
+  padding: 20px;
+}
+.btn-submit{
+  color: var(--branco);
+  border: 2px solid var(--areia);
+}
+.btn-submit:hover {
+  background-color: var(--azul-claro);  
+  color: var(--branco);
+  border: 2px solid var(--areia);
+}
+.login .form-label,
+.inscrever .form-label {
+  color: var(--branco);
+  font-size: 20px;
+}
+.login .form-control,
+.inscrever .form-control{
+  background-color: var(--areia);
+  height: 40px;
+}
+.recuperar-password {
+  color: var(--azul-claro);     
+  text-decoration: none;
+  font-size: 16px;
+}
+.recuperar-password:hover {
+  text-decoration: underline;
+  color: var(--branco);
+}
+
+/* HORÁRIOS- TEXTOS - PREÇO */
+.horario {
+  background-image: url("../img/time.png");
+  min-height: 650px;
+  padding-top: 80px;
+  padding-left: 100px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.estacao{
+  color: var(--azul-claro);
+  font-size: 45px;
+}
+.textt,
+.texth
+{
+  font-size: 25px;
+  color: var(--branco);
+  text-align: left;
+}
+
+.preco {
+  background-image: url("../img/preco.png");
+  min-height: 650px;
+  padding-top: 80px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#titlep{
+  font-size: 100px;
+  padding-top: 95px;
+  color: var(--branco)
+}
+
+#title{
+  color: var(--azul-claro)
+
+}
+.textp{
+  font-size: 25px;
+}
+/* PERFIL */
+.titulo-perfil {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--azul-oceano);
+}
+
+.card-perfil {
+  background-color: var(--azul-oceano);
+  border-radius: 10px;
+  color: white;
+}
+
+.imagem-perfil {
+  max-height: 300px;
+  max-width: 352px;
+  object-fit: cover;
+}
+
+.icone-perfil {
+  width: 22px;
+  height: 22px;
+}
+
+/* DASHBOARD */
+.card-dashboard {
+  background-color: var(--azul-claro);
+  border-radius: 10px;
+}
+
+/* NÍVEIS */
+.nivel-badge {
+  font-size: 18px;
+  color: var(--azul-oceano);
+}
+
+.nivel-horario {
+  background-color: var(--areia);
+  color: var(--azul-oceano);
+  padding: 12px;
+}
+
+/* AJUDA */
+.ajuda-texto {
+  color: var(--azul-oceano);
+  font-size: 16px;
+}
+.btn-adm{
+  background-color: var(--azul-oceano);
+  color: var(--branco);
+  border: 2px solid (--azul-oceano);
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.btn-adm:hover {
+  background-color: var(--areia);
+  color: var(--azul-oceano);
+  border: 2px solid;
+  font-weight: bold;
+}
+.btn-admin{
+
+  background-color: var(--areia-clara);
+  color: var(--azul-oceano);
+  border: 2px solid var(--areia-clara);
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 119, 182, 0.4);
+}
+.btn-admin:hover{
+  background-color: var(--azul-claro);
+  color: var(--azul-oceano);
+  box-shadow: 0 6px 20px rgba(0, 119, 182, 0.5);
+  transform: translateY(-2px);
+  font-weight: bold;
+}
+/* CARDS DE AULAS */
+.card-aula {
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-aula:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 119, 182, 0.3);
+}
+.card-aula-azul  { border: 2px solid var(--azul-oceano); }
+.card-aula-vermelho { border: 2px solid #dc3545; }
+.card-aula-amarelo  { border: 2px solid #ffc107; }
+
+.card-aula-header {
+  background-color: var(--azul-claro);
+  color: var(--branco);
+  border-radius: 10px 10px 0 0;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+.card-aula-header-vermelho {
+  background-color: #dc3545;
+  color: var(--branco);
+  border-radius: 10px 10px 0 0;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+.card-aula-header-amarelo {
+  background-color: #ffc107;
+  color: var(--azul-oceano);
+  border-radius: 10px 10px 0 0;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+.card-aula-body { padding: 16px; }
+.card-aula-footer {
+  background: transparent;
+  border: none;
+  text-align: center;
+}
+
+/* BADGES */
+.badge-verde    { background-color: green; }
+.badge-vermelho { background-color: #dc3545; }
+.badge-amarelo  { background-color: #ffc107; }
+.vagas-cancelada { color: #dc3545; }
+.badge-azul     { background-color: var(--azul-oceano); }
+
+/* TABELAS ADMIN */
+.tabela-admin thead {
+  background-color: var(--azul-oceano);
+  color: var(--branco);
+}
+.tabela-admin tbody tr:hover { background-color: var(--areia-clara); }
+
+/* TÍTULO DE PÁGINA */
+.titulo-pagina {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--azul-oceano);
+}
+
+/* VAGAS */
+.vagas-disponiveis { color: green; }
+.vagas-esgotadas   { color: #dc3545; }
+.inscrever .titulo-pagina {
+  color: var(--branco);
+}
+
+.inscrever .card-aula-body p {
+  color: #333;
+}
+
+.inscrever .text-muted {
+  color: var(--areia) !important;
+}
+.btn-adm-desinscrever {
+  background-color: #dc3545;
+  color: var(--branco);
+  border: 2px solid #dc3545;
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.btn-adm-desinscrever:hover {
+  background-color: var(--areia);
+  color: #dc3545;
+  border: 2px solid #dc3545;
+  font-weight: bold;
+}
