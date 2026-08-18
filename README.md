@@ -2,6 +2,20 @@
 
 Aplicação web full-stack para a gestão de uma escola de surf, desenvolvida com PHP e MySQL. O sistema reúne autenticação, inscrições, gestão de aulas, área do utilizador e painel administrativo.
 
+## Screenshots
+
+### Página inicial
+
+![Página inicial do SurfCrew School](docs/screenshots/surfcrew-home.png)
+
+### Login
+
+![Tela de login do SurfCrew School](docs/screenshots/surfcrew-login.png)
+
+### Criação de conta
+
+![Tela de criação de conta do SurfCrew School](docs/screenshots/surfcrew-criar-conta.png)
+
 ## Funcionalidades
 
 ### Área pública e autenticação
