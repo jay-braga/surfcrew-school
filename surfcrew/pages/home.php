@@ -11,10 +11,10 @@
 </strong></p>
  
       <div class="d-flex gap-4 mx-auto mt-5">
-<a type="button" class="btn btn-light btn-sm px-4 py-1 fw-bold mx-5" href="/JayelliBraga/horariopreco.php#titlep">
+<a type="button" class="btn btn-light btn-sm px-4 py-1 fw-bold mx-5" href="<?php echo $base_url . 'pages/nav_horariopreco.php#titlep' ?>">
         Preços
 </a>
-<a type="button" class="btn btn-light btn-sm px-4 py-1 fw-bold mx-5" href="/JayelliBraga/horariopreco.php#title">
+<a type="button" class="btn btn-light btn-sm px-4 py-1 fw-bold mx-5" href="<?php echo $base_url . 'pages/nav_horariopreco.php#title' ?>">
         Horários
 </a>
 </div>
