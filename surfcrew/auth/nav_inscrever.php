@@ -14,7 +14,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // valores fixos
     $tipo = "Aluno";
-    $nivelInstrutor = "";
 
     // Hash da password
     $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
@@ -22,13 +21,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     try {
         //1. Criar a query de INSERT
         $stmt = $pdo->prepare("
-            INSERT INTO Utilizadores 
-            (Nome, Apelido, DataNascimento, DocumentoIdentificacao, Email, Senha, Telemovel, Tipo, nivelInstrutor, CriadoEm)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())
-            
+        INSERT INTO Utilizadores 
+        (Nome, Apelido, DataNascimento, DocumentoIdentificacao, Email, Senha, Telemovel, Tipo, CriadoEm)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, NOW())
         ");
+            
         //2. Preparae a query contra injeçoes
-        if($stmt->execute([$nome, $apelido, $dataNascimento, $documento, $email, $senhaHash, $telemovel, $tipo, $nivelInstrutor])){
+        if($stmt->execute([$nome, $apelido, $dataNascimento, $documento, $email, $senhaHash, $telemovel, $tipo])){
     
             // guardar dados na sessão
             //session_start();
@@ -37,7 +36,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $_SESSION['user_tipo'] = $tipo;
         $mensagem = "Registo efetuado com sucesso!";
             //redirecionar para o perfil
-            header("Location: ../user/perfil.php");
+            header("Location: ../user/nav_perfil.php");
             exit;
         }
 
