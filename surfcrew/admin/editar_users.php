@@ -1,5 +1,10 @@
 <?php
 require_once('../src/includes/db.php');
+// só o admin pode aceder a esta página
+if(!isset($_SESSION['user_tipo']) || $_SESSION['user_tipo'] != "Admin"){
+    header("Location: ../auth/nav_acessar.php");
+    exit;
+}
 require_once('../src/includes/head.php');
 require_once('../src/includes/nav_bar.php');
 $id = $_GET['id'] ;
@@ -12,20 +17,29 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST["nome"];
     $tipo = $_POST["tipo"];
+    // só os instrutores têm nível; para os outros tipos fica NULL
+    $nivelInstrutor = $_POST["nivelInstrutor"] ?: null;
+    if($tipo != "Instrutor"){
+        $nivelInstrutor = null;
+    }
     try{
         if(!empty($_POST['Senha'])){
             $SenhaEncrip = password_hash($_POST['Senha'], PASSWORD_DEFAULT);
-            $stmtUpdate = $pdo->prepare("UPDATE Utilizadores SET Nome = ?, Tipo = ?, Senha = ? WHERE IdUtilizador = ?");
-            if ($stmtUpdate->execute([$nome, $tipo, $SenhaEncrip, $id])){
+            $stmtUpdate = $pdo->prepare("UPDATE Utilizadores SET Nome = ?, Tipo = ?, nivelInstrutor = ?, Senha = ? WHERE IdUtilizador = ?");
+            if ($stmtUpdate->execute([$nome, $tipo, $nivelInstrutor, $SenhaEncrip, $id])){
             $mensagem = "Atualizado com sucesso!";
             $user['Nome'] = $nome; 
+            $user['Tipo'] = $tipo;
+            $user['nivelInstrutor'] = $nivelInstrutor;
             } 
         }
         else{       
-            $stmtUpdate = $pdo->prepare("UPDATE Utilizadores SET Nome = ?, Tipo = ? WHERE IdUtilizador = ?");
-            if ($stmtUpdate->execute([$nome, $tipo, $id])){
+            $stmtUpdate = $pdo->prepare("UPDATE Utilizadores SET Nome = ?, Tipo = ?, nivelInstrutor = ? WHERE IdUtilizador = ?");
+            if ($stmtUpdate->execute([$nome, $tipo, $nivelInstrutor, $id])){
             $mensagem = "Atualizado com sucesso!";
             $user['Nome'] = $nome; 
+            $user['Tipo'] = $tipo;
+            $user['nivelInstrutor'] = $nivelInstrutor;
             }
         }
     }
@@ -61,6 +75,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <option <?= $user['Tipo'] == 'Admin' ? 'selected' : '' ?>>Admin</option>
         <option <?= $user['Tipo'] == 'Aluno' ? 'selected' : '' ?>>Aluno</option>
         <option <?= $user['Tipo'] == 'Instrutor' ? 'selected' : '' ?>>Instrutor</option>
+      </select>
+    </div>
+
+    <div class="col-12 col-md-4">
+      <label class="form-label">Nível Instrutor</label>
+      <select name="nivelInstrutor" class="form-control">
+        <option value="">-- Apenas para Instrutores --</option>
+        <option value="Kids" <?= $user['nivelInstrutor'] == 'Kids' ? 'selected' : '' ?>>Kids</option>
+        <option value="Normal" <?= $user['nivelInstrutor'] == 'Normal' ? 'selected' : '' ?>>Normal</option>
+        <option value="Intermedio" <?= $user['nivelInstrutor'] == 'Intermedio' ? 'selected' : '' ?>>Intermédio</option>
       </select>
     </div>
 
