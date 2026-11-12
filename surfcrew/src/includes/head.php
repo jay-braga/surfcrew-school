@@ -1,5 +1,5 @@
 <?php
-$base_url = 'https://alunos.andremoreira.pt/JayelliBraga/';
+$base_url = 'http://localhost/surfscrewschool/';
 ?>
 
  
