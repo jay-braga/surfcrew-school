@@ -1,5 +1,10 @@
 <?php 
 require_once('../src/includes/db.php');
+// só o admin pode aceder a esta página
+if(!isset($_SESSION['user_tipo']) || $_SESSION['user_tipo'] != "Admin"){
+    header("Location: ../auth/nav_acessar.php");
+    exit;
+}
 require_once('../src/includes/head.php');
 require_once('../src/includes/nav_bar.php');
 
@@ -13,14 +18,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $senha                 = $_POST["senha"];
     $telemovel             = $_POST["telemovel"];
     $tipo                  = $_POST["tipo"];
-    $nivelInstrutor        = $_POST["nivelInstrutor"];
+    // se não for escolhido nível, guarda NULL (o ENUM não aceita texto vazio)
+    $nivelInstrutor        = $_POST["nivelInstrutor"] ?: null;
 
     $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
     try{
         $sql = "INSERT INTO Utilizadores 
                 (Nome, Apelido, DataNascimento, Email, Senha, Telemovel, Tipo, nivelInstrutor) 
-                VALUES (?,?,?,?,?,?,?,?,?)";
+                VALUES (?,?,?,?,?,?,?,?)";
         $stmt = $pdo->prepare($sql);
         
         if($stmt->execute([$nome, $apelido, $dataNascimento, $email, $senhaHash, $telemovel, $tipo, $nivelInstrutor])){
@@ -95,9 +101,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           <label class="form-label">Nível Instrutor</label>
           <select name="nivelInstrutor" class="form-control">
             <option value="">-- Apenas para Instrutores --</option>
-            <option value="kids">Kids</option>
-            <option value="normal">Normal</option>
-            <option value="avançado">Avançado</option>
+            <option value="Kids">Kids</option>
+            <option value="Normal">Normal</option>
+            <option value="Intermedio">Intermédio</option>
           </select>
         </div>
 
