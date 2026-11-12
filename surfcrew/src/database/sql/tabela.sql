@@ -7,14 +7,17 @@ USE SURF;
 CREATE TABLE Utilizadores(
     IdUtilizador INT AUTO_INCREMENT PRIMARY KEY,
     Nome VARCHAR(150) NOT NULL,
+    Apelido VARCHAR(150) NOT NULL,
     DataNascimento  DATE NOT NULL,
-    DocumentoIdentificacao VARCHAR(20) NOT NULL UNIQUE,
+    DocumentoIdentificacao VARCHAR(20) NULL UNIQUE,
     Email VARCHAR(100) NOT NULL,
-    Senha VARCHAR(12) NOT NULL,
+    Senha VARCHAR(255) NOT NULL,
     Telemovel INT  NOT NULL,
-    Tipo ENUM('Admin','Aluno') NOT NULL DEFAULT ('Aluno'),
+    Tipo ENUM('Admin','Aluno','Instrutor') NOT NULL DEFAULT ('Aluno'),
+    nivelInstrutor ENUM('Kids','Normal','Intermedio') NULL,
     CriadoEm DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
-    AtualizadoEm TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP()
+    AtualizadoEm TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP(),
+    apagado_em DATETIME NULL DEFAULT NULL
 );
 
 
@@ -28,7 +31,8 @@ CREATE TABLE Instrutores(
     Telemovel INT  NOT NULL,
     TipoAula ENUM('Kids','Normal','Intermedio') NOT NULL,
     CriadoEm DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
-    AtualizadoEm TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP()
+    AtualizadoEm TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP(),
+    apagado_em DATETIME NULL DEFAULT NULL
 );
 
 
@@ -44,11 +48,12 @@ CREATE TABLE Aulas(
     Estado ENUM('Aberta','Fechada','Cancelada') NOT NULL DEFAULT ('Aberta'),
     CriadoEm DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
     AtualizadoEm TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP(),
-    FOREIGN KEY (IdInstrutor) REFERENCES Instrutores (IdInstrutor)
+    apagado_em DATETIME NULL DEFAULT NULL,
+    FOREIGN KEY (IdInstrutor) REFERENCES Utilizadores (IdUtilizador)
 );
 
 
-CREATE TABLE IncricoesAulas(
+CREATE TABLE InscricoesAulas(
     IdInscricaoAula INT AUTO_INCREMENT PRIMARY KEY,
     IdUtilizador INT NOT NULL,
     IdAula INT NOT NULL,
@@ -57,9 +62,7 @@ CREATE TABLE IncricoesAulas(
     Falta ENUM('Presente', 'Faltou') NOT NULL DEFAULT 'Presente',
     CriadoEm DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
     AtualizadoEm TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP(),
+    apagado_em DATETIME NULL DEFAULT NULL,
     FOREIGN KEY (IdUtilizador) REFERENCES Utilizadores(IdUtilizador),
     FOREIGN KEY (IdAula) REFERENCES Aulas (IdAula)
 );
-
-
-
