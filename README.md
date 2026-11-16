@@ -13,7 +13,7 @@ Primeiro projeto académico completo de **Jayelli Braga**
 
 </div>
 
-![Página inicial do SurfCrew School](https://github.com/user-attachments/assets/5deef7c9-9256-41ab-a9c0-5a7752c1b019)
+![Página inicial do SurfCrew School](https://github.com/user-attachments/assets/5449514d-20d2-48e0-99ff-1b9289f78889)
 
 ## Sobre o projeto
 
@@ -65,34 +65,34 @@ Capturas reais da aplicação, organizadas pelo percurso do utilizador. Clique n
 
 | Horários | Preços e acesso às aulas |
 | --- | --- |
-| ![Horários de verão e inverno](https://github.com/user-attachments/assets/77dc4c83-3ca3-4608-bca2-393ce1d9b217) | ![Preços e mapa de aulas na página pública](https://github.com/user-attachments/assets/7f5b499e-91e8-434e-b538-e76e11783696) |
+| ![Horários de verão e inverno](https://github.com/user-attachments/assets/343e3954-7c4d-4489-9939-26939ab17da0) | ![Preços e mapa de aulas na página pública](https://github.com/user-attachments/assets/33627319-8c20-4c11-957e-c8ecc3ce0202) |
 
 ### Entrar na aplicação
 
 | Login | Criar conta |
 | --- | --- |
-| ![Formulário de login](https://github.com/user-attachments/assets/589e64ce-01b1-488b-8b04-1dd445dbf0b7) | ![Formulário de criação de conta](https://github.com/user-attachments/assets/e98438d2-f77e-41ac-bfbb-789ff63d4bba) |
+| ![Formulário de login](https://github.com/user-attachments/assets/d6b78a21-0021-4a5c-bcd7-f7fe432329b1) | ![Formulário de criação de conta](https://github.com/user-attachments/assets/cba0caa7-17d9-45fe-a5c2-76204638aeb3) |
 
 ### Área do aluno
 
-![Perfil do aluno e acesso ao dashboard](https://github.com/user-attachments/assets/fe936df6-06af-4d84-bc41-d6894ace621b)
+![Perfil do aluno e acesso ao dashboard](https://github.com/user-attachments/assets/6c190d7e-6750-416d-a43a-d4c9ba5a2e7d)
 
 | Mapa de aulas | As minhas aulas |
 | --- | --- |
-| ![Aulas disponíveis e opção de inscrição ou desinscrição](https://github.com/user-attachments/assets/9bc56750-bf7b-4400-8143-ad36d620e365) | ![Aulas e inscrições do aluno](https://github.com/user-attachments/assets/b09dc121-4f05-4c16-a5bb-bf8004cd42a3) |
+| ![Aulas disponíveis e opção de inscrição ou desinscrição](https://github.com/user-attachments/assets/8b80b5a3-92ef-4c29-9b39-48f3803a4e89) | ![Aulas e inscrições do aluno](https://github.com/user-attachments/assets/d6aa9068-37da-4c1e-9a85-924592c52aee) |
 
 ### Área administrativa
 
-![Painel do administrador](https://github.com/user-attachments/assets/62aa8e46-3599-4f61-9f1d-e4fe5ea6130c)
+![Painel do administrador](https://github.com/user-attachments/assets/3c2fae85-b931-44b3-8e2a-54623c7a9a44)
 
 | Utilizadores | Aulas |
 | --- | --- |
-| ![Lista de utilizadores com ações de gestão](https://github.com/user-attachments/assets/6b3e1e2d-56fc-423c-b8f0-6b8568433d49) | ![Lista de aulas com ações de gestão](https://github.com/user-attachments/assets/07fb1315-ce1d-432f-80a6-d6cc02a0cef6) |
+| ![Lista de utilizadores com ações de gestão](https://github.com/user-attachments/assets/11554a3f-e80d-4c83-bc7b-ae23aa4c7676) | ![Lista de aulas com ações de gestão](https://github.com/user-attachments/assets/b6b6bfda-8f26-42a5-8338-fe831b7ea6b3) |
 
 <details>
 <summary><strong>Ver formulário de criação de aula</strong></summary>
 
-![Criação de aula com instrutor, data, hora, local, nível, vagas e estado](https://github.com/user-attachments/assets/77fc09c7-5bad-421e-a2b1-337000790b19)
+![Criação de aula com instrutor, data, hora, local, nível, vagas e estado](https://github.com/user-attachments/assets/dec9d366-4f74-4ec9-bbdc-a38a5f22069e)
 
 </details>
 
